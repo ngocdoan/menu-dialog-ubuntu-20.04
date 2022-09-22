@@ -35,3 +35,35 @@ rm -rf subspace-docker-folder
 mkdir subspace-docker-folder
 cd subspace-docker-folder
 PORTS = (4000 5000 6000)
+
+#####################
+khai bao mảng port = (4000 5000 6000)
+
+
+tìm ra số core CPU --ví dụ == 8 --> core = 8
+for 
+cho n = 0
+tăng mảng dần cho đến khi n = core
+n=1 -->
+port = 4001 5001 6001
+cd $HOME
+mkdir n=1
+cd n=1
+down docker file
+down .env file
+dung lenh sed replace hoac tee
+
+# create service
+sudo tee $HOME/$n/.env > /dev/null <<EOF
+IMAGETAG=gemini-2a-2022-sep-10
+NODENAME=owlstake$n
+PORT1=port[0]
+PORT2=port[1]
+PORT3=port[2]
+REWARDADDRESS=st8AwHwQV8479Gdfo42GvxWgcRCz6Q7qcW3rHkV9tT6daKBAw
+PLOTSIZE=10G
+EOF
+docker compose up -d
+sleep 10
+
+#######################
