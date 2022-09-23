@@ -67,3 +67,15 @@ docker compose up -d
 sleep 10
 
 #######################
+PORT=(4000 5000 6000)
+N=0
+CPU=5
+
+for (( N=1; N<=$CPU; N++ ))
+do  
+  echo "$N"
+  printf '%s\n' "${PORT[@]}"
+  PORT[0]=$((PORT[0]+1))
+  PORT[1]=$((PORT[1]+1))
+  PORT[2]=$((PORT[2]+1))
+done
