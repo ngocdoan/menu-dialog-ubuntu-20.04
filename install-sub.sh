@@ -79,3 +79,14 @@ do
   PORT[1]=$((PORT[1]+1))
   PORT[2]=$((PORT[2]+1))
 done
+##########################################
+# read file and add each line to an array:
+readarray -t arr <rewardaddress.txt
+
+# print each line
+for value in "${arr[@]}"
+do
+echo $value
+done
+#
+###########################################
