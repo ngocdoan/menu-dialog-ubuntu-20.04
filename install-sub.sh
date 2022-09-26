@@ -90,3 +90,13 @@ echo $value
 done
 #
 ###########################################
+# append to array 
+mang=()
+mang+=("doan")
+mang+=("hang")
+
+for value in "${mang[@]}"
+do
+echo $value
+done
+################################
