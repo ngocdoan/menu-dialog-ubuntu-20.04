@@ -1,3 +1,14 @@
+#########################
+#Ask port ranges array
+PORTARRAY=()
+echo "Please provide 3 port ranges for the nodes"
+read -p 'Port range #1: ' -e -i '4000' port1
+PORTARRAY+=($port1)
+read -p 'Port range #2: ' -e -i '5000' port2
+PORTARRAY+=($port2)
+read -p 'Port range #3: ' -e -i '6000' port3
+PORTARRAY+=($port3)
+##########################
 CPUCORE=$(nproc)
 readarray -t arrrewardaddress <rewardaddress.txt
 arrlength=${#arrrewardaddress[@]}
